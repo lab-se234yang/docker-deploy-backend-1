@@ -46,11 +46,11 @@ jobs:
           push: true
           tags: yanhang1/234-deploylab-backend:latest
       -
-      name: prepare the docker-compose run
-      run: |
-        mkdir 234-deploylab-backend
-        cp docker-compose.yml 234-deploylab-backend/docker-compose.yml
-        cd 234-deploylab-backend
-        docker-compose -H ${{ secrets.HOST_SERVER }} down -remove-orphans
-        docker-compose -H ${{ secrets.HOST_SERVER }} pull
-        docker-compose -H ${{ secrets.HOST_SERVER }} up -d
+        name: prepare the docker-compose run
+        run: |
+              mkdir 234-deploylab-backend
+              cp docker-compose.yml 234-deploylab-backend/docker-compose.yml
+              cd 234-deploylab-backend
+              docker-compose -H ${{ secrets.HOST_SERVER }} down -remove-orphans
+              docker-compose -H ${{ secrets.HOST_SERVER }} pull
+              docker-compose -H ${{ secrets.HOST_SERVER }} up -d
